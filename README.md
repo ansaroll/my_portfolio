@@ -1,2 +1,2 @@
 # my_portfolio
-newPortfolio
+new Portfolio and to improve CSS and HTML Skills :) ;)
