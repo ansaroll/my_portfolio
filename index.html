@@ -30,7 +30,7 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link">
+                        <a href="#home" class="nav__link active-link">
                             <i class="uil uil-estate nav__icon"></i> Home
                         </a> 
                     </li>
@@ -64,6 +64,11 @@
             </div> 
 
             <div class="nav__btns">
+
+                <!-- Theme change button -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
                 </div>
@@ -93,14 +98,25 @@
                     </div>
 
                     <div class="home__img">
-                        <svg class="home__blob" id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                        <!-- <img src="assets/img/profil3.png" alt="" srcset=""> -->
+                        <!-- <svg class="home__blob" id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
                             <defs>
                                 <clipPath id="blob">
-                                    <path fill="#474bff" d="M301,335.5Q130,431,127.5,236Q125,41,298.5,140.5Q472,240,301,335.5Z" />
+                                    <path fill="#474bff" d="M404,473Q100,541,60.5,254Q75,1,345.5,100.5Q482,180,401,475.5Z" />
                                 </clipPath>
                             </defs>
-                            <image class="home__blob-img" x="10" y="50" width="100%" height="100%" clip-path="url(#blob)" xlink:href="/assets/img/profil3.jpg" preserveAspectRatio="xMidYMid"></image>
-                        </svg>
+                            <image class="home__blob-img" x="10" y="50" width="100%" height="100%" clip-path="url(#blob)" xlink:href="/assets/img/profil3.png
+                            " preserveAspectRatio="xMidYMid"></image>
+                        </svg> -->
+
+                          <!-- <svg class="home__blob" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                            <defs>
+                              <clipPath id="shape">
+                                <path id="blob" d="M475,309.5Q456,369,410,408Q364,447,307,464Q250,481,188,473Q126,465,86,416.5Q46,368,35.5,309Q25,250,40,193.5Q55,137,95,93.5Q135,50,192.5,29Q250,8,307,30Q364,52,405,94.5Q446,137,470,193.5Q494,250,475,309.5Z" ></path>
+                              </clipPath>
+                            </defs> -->
+                            <img class="home__blob-img"  width="80%" src="assets/img/profil3.png" />
+                          <!-- </svg> -->
                     </div>
 
                     <div class="home__data">
@@ -138,7 +154,7 @@
             <h2 class="section__title">About Me</h2>
             <span class="section__subtitle">My Introduction</span>
 
-            <div class="about__content container grid">
+            <div class="about__container container grid">
                 <img src="assets/img/profil2.jpg" alt="" class="about__img">
 
                 <div class="about__data">
@@ -174,8 +190,6 @@
         </section>
 
         <!-- ================= Skills ======================--> 
-
-
 
 
         <section class="skils section" id="skills">
@@ -364,7 +378,6 @@
 
             </div>
         </section>
-
 
 
         <!-- Qualifications --> 
@@ -683,14 +696,13 @@
         </section>
  
 
-
         <!--=========================== Portfolio -->
 
         <section class="portfolio section" id="portfolio">
             <h2 class="section__title">Portfolio</h2>
             <span class="section__subtitle">Most recent work</span>
 
-            <div class="swiper swp1 portfolio__container container">
+            <div class="portfolio__container container swp1 swiper">
                 <div class="swiper-wrapper">
                     <!-- ================PORTFOLIO 1 -->
                     <div class="portfolio__content grid swiper-slide">
@@ -748,8 +760,7 @@
             </div>
         </section>
 
-
-
+ 
         <!-- project in mind -->
 
         <section class="project section">
@@ -939,6 +950,33 @@
                         </div>
                     </div>
                 </div>
+
+                <form action="#" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                       <div class="contact__content">
+                            <label for="" class="contact__label">Name</label>
+                            <input type="text" class="contact__input">
+                       </div>
+                       <div class="contact__content">
+                            <label for="" class="contact__label">Email</label>
+                            <input type="email" class="contact__input">
+                        </div>
+                    </div>
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Project</label>
+                        <input type="text" class="contact__input">
+                    </div>
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Message</label>
+                        <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                    </div>
+
+                    <div>
+                        <a href="#" class="button button--flex">
+                            Send Message <i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
+                </form>
             </div>
         </section>
 
@@ -947,14 +985,53 @@
 
 
 
+    <!-- ============================== FOOTER ================== -->
 
-    <!-- ============== FOOTER ================== -->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Ansaroll</h1>
+                    <span class="footer__subtitle">Javascript Developer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#services" class="footer__link">Services</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="footer__link">Contact Me</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com/" class="footer__social" target="_blank">
+                        <i class="uil uil-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" class="footer__social" target="_blank">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                    <a href="https://www.github.com" class="footer__social" target="_blank">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Ansaroll, All right reserved</p>
+        </div>
+    </footer>
 
 
 
 
-    <!-- =================== SCROLL TOP =============== -->
+    <!-- ============================== SCROLL UP  =============== -->
 
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
 
 
 
@@ -967,3 +1044,4 @@
 
 </body>
 </html>
+

@@ -115,17 +115,23 @@ modalCloses.forEach((modalClose) => {
 const swiperPortfolio = new Swiper('.swp1', {
     // cssMode: true,
     loop:true,
+    spaceBetween:48,
     pagination: {
         el: '.swiper-pagination',
         clickable:true,
+        dynamicBullets:true,
+
     },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    scrollbar:{
-        el:'.swiper-scrollbar',
-    },
+    breakpoints:{
+        568:{
+            slidePerView:2,
+        }
+    }  
+
 });
 
 
@@ -154,3 +160,93 @@ const swipertestimonial = new Swiper('.swp2', {
     }
 
 });
+
+// ====================================== Scroll sections Active links //
+
+const sections = document.querySelectorAll('section[id]')
+// console.log(sections);
+// console.log('allo');
+function scrollActive() {
+    const scrollY = window.pageYOffset
+    
+
+    sections.forEach(current =>{
+        console.log(current);
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop -50;
+        sectionId = current.getAttribute('id')
+        // console.log(sectionId);
+        // saika tsy nety letieee 
+        // ay kay mou nav__menu fa tsy nav_menu
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }
+        else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
+}
+
+window.addEventListener('scroll' , scrollActive)
+
+
+// ======================  Change background header
+
+function scrollHeader() {
+    const nav = document.getElementById('header')
+    // when the scroll is greater than 200 viewport height , add the scroll-header class to the header
+    if(this.scrollY >= 80) 
+        nav.classList.add('scroll-header');
+    else
+        nav.classList.remove('scroll-header')
+}
+
+window.addEventListener('scroll', scrollHeader)
+
+// ===================================================== show scroll up button
+
+// const dgetId = document.getElementById();
+function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    // when the scroll is higher than 560 viewport ,  add the show-scroll class to the a tag with the scrollup
+    if(this.scrollY >= 560)
+        scrollUp.classList.add('show-scroll');
+    else
+        scrollUp.classList.remove('show-scroll')
+}
+
+window.addEventListener('scroll', scrollUp)
+
+
+// ============================== dark light theme =====================  //
+
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'uil-sun'
+
+// previously selected topic ( if user selected )
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+ 
+// we pbtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+// we validate if the user previously choose a topic
+if(selectedTheme) {
+    // if the validation is fulfilled, we ask what the issue was to know if we activated or desactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+// active / desactive manually the theme with the button
+themeButton.addEventListener('click', () => {
+    //add or remove the dark / icon theme
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+
+    // we save the theme and the current icon that the user choosen
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon' ,getCurrentIcon())
+})
