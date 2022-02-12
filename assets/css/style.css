@@ -198,6 +198,7 @@ img{
     justify-content:space-between;
     align-items: center;
 }
+
 .nav__logo,
 .nav__toggle{
     color: var(--title-color);
@@ -775,7 +776,8 @@ img{
 /* PORTFOLIO */
 
 .portfolio__container{
-    overflow: initial;
+    /* width: 70%; */
+    overflow:visible;
 }
 
 .portfolio__content{
@@ -1382,7 +1384,7 @@ img{
 
     .contact__form{
         width: 460px;
-     }
+    }
 
     .contact__inputs{
         grid-template-columns: repeat(2, 1fr);

@@ -115,7 +115,9 @@ modalCloses.forEach((modalClose) => {
 const swiperPortfolio = new Swiper('.swp1', {
     // cssMode: true,
     loop:true,
-    spaceBetween:48,
+    spaceBetween:2000,
+    grabCursor:true,
+
     pagination: {
         el: '.swiper-pagination',
         clickable:true,
